@@ -9,6 +9,7 @@ import android.widget.EditText
 import retrofit2.Call
 import retrofit2.Callback
 import retrofit2.Response
+import retrofit2.Response.success
 import retrofit2.Retrofit
 import retrofit2.converter.gson.GsonConverterFactory
 import retrofit2.http.Field
@@ -54,20 +55,23 @@ class LoginActivity : AppCompatActivity() {
                     val result=response.body()
                     Log.d("로그인","${result}")
                 }
-
                 override fun onFailure(call: Call<LoginResponse>, t: Throwable) {
                     Log.e("로그인","${t.localizedMessage}")
                 }
             })
+
+                val nextIntent = Intent(this, LoginResult::class.java) //전환된 액티비티에 데이터 값 전달
+                nextIntent.putExtra("msg", id.text.toString())
+                startActivity(nextIntent)
+
         }
 
         btnRegister.setOnClickListener {
             Intent(this, SignUpActivity::class.java).run {
                 startActivity(this)
             }
+
         }
-
-
     }
 
     interface SignService{ //레트로핏을 활용하기 위한 코드
