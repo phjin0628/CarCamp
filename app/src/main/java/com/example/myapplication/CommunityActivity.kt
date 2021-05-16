@@ -3,7 +3,6 @@ package com.example.myapplication
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import com.example.myapplication.databinding.ActivityCategoryBinding
 import com.example.myapplication.databinding.ActivityCommunityBinding
 
 class CommunityActivity : AppCompatActivity() {
@@ -12,9 +11,9 @@ class CommunityActivity : AppCompatActivity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_community)
+        setContentView(binding.root)
 
-        val intent = Intent (this, PublicActivity::class.java)
-        binding.btnPublic.setOnClickListener { startActivity(intent) }
+        val intent= Intent(this, Community_write::class.java)
+        binding.btnAdd.setOnClickListener { startActivity(intent) }
     }
 }
