@@ -6,6 +6,8 @@ import android.os.Bundle
 import android.util.Log
 import android.widget.Button
 import android.widget.EditText
+import android.widget.Toast
+import kotlinx.android.synthetic.main.activity_car_map.*
 import retrofit2.Call
 import retrofit2.Callback
 import retrofit2.Response
@@ -19,9 +21,9 @@ import retrofit2.http.POST
 class LoginActivity : AppCompatActivity() {
     lateinit var id: EditText
     lateinit var password: EditText
+    lateinit var name: EditText
     lateinit var button: Button
     lateinit var btnRegister: Button
-
     lateinit var goCategory:Button
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -50,6 +52,7 @@ class LoginActivity : AppCompatActivity() {
         button.setOnClickListener {
             val idStr=id.text.toString()
             val pwStr=password.text.toString()
+
             service.login(idStr,pwStr).enqueue(object : Callback<LoginResponse> {
                 override fun onResponse(call: Call<LoginResponse>, response: Response<LoginResponse>) {
                     val result=response.body()
@@ -58,10 +61,13 @@ class LoginActivity : AppCompatActivity() {
                 override fun onFailure(call: Call<LoginResponse>, t: Throwable) {
                     Log.e("로그인","${t.localizedMessage}")
                 }
+
             })
+                Toast.makeText(this@LoginActivity, "로그인 성공", Toast.LENGTH_SHORT).show()
 
                 val nextIntent = Intent(this, LoginResult::class.java) //전환된 액티비티에 데이터 값 전달
                 nextIntent.putExtra("msg", id.text.toString())
+
                 startActivity(nextIntent)
 
         }

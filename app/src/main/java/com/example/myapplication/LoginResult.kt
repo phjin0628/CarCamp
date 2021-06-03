@@ -19,6 +19,9 @@ class LoginResult : AppCompatActivity() {
             gettextID.text=intent.getStringExtra("msg")
         }
 
+        val nextIntent=Intent(this, MoreActivity::class.java)
+        nextIntent.putExtra("msg", gettextID.text.toString())
+
         CategoryGo.setOnClickListener {
             Intent(this, CategoryActivity::class.java).run {
                 startActivity(this)

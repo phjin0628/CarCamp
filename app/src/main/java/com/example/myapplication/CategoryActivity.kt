@@ -4,6 +4,7 @@ import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import com.example.myapplication.databinding.ActivityCategoryBinding
+import kotlinx.android.synthetic.main.activity_login_result.*
 
 class CategoryActivity : AppCompatActivity() {
 
@@ -28,6 +29,7 @@ class CategoryActivity : AppCompatActivity() {
         //더보기 누르면 더보기 화면으로 이동
         val intent4 = Intent(this, MoreActivity::class.java)
         binding.etcBtn.setOnClickListener{startActivity(intent4)}
+
 
     }
 }

@@ -135,13 +135,13 @@
         android:layout_marginTop="30dp"
         android:layout_marginEnd="20dp"
         android:layout_marginRight="20dp"
-        app:layout_constraintEnd_toStartOf="@+id/textView23"
+        app:layout_constraintEnd_toStartOf="@+id/UserID"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:srcCompat="@drawable/user" />
 
     <TextView
-        android:id="@+id/textView23"
+        android:id="@+id/UserID"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="45dp"
