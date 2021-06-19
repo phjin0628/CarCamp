@@ -7,11 +7,11 @@ import retrofit2.http.Url
 
 class CarMapOpen {
     companion object{
-        val DOMAIN="http://3.34.141.115/dbcon3.php/"
+        val DOMAIN="http://3.34.141.115/getjson.php/"
     }
 }
 
 interface CarOpenService{
-    @GET //("http://3.34.141.115/dbcon3.php") //@GET이랑 @URL 같이 쓸 수 없음
+    @GET //("http://3.34.141.115/getjson.php/") //@GET이랑 @URL 같이 쓸 수 없음
     fun getCar(@Url url:String): Call<CarMapJson>
 }
