@@ -17,7 +17,8 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.MyApplication"
         android:usesCleartextTraffic="true">
-        <activity android:name=".Community_write"></activity>
+        <activity android:name=".Community_Content"></activity>
+        <activity android:name=".Community_write" />
         <activity android:name=".LoginResult" />
         <activity android:name=".SignUpActivity" />
 
