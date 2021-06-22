@@ -35,7 +35,9 @@ class Holder(itemView: View) :RecyclerView.ViewHolder(itemView) {
             val intent = Intent(itemView.context, Community_Content::class.java)
             intent.putExtra("no", itemView.textNo.text)
             intent.putExtra("title", itemView.textTitle.text)
+            intent.putExtra("writer", itemView.textWriter.text)
             intent.putExtra("date", itemView.textDate.text)
+            intent.putExtra("Hits", itemView.textHits.text)
             itemView.context.startActivity(intent)
         }
     }
@@ -43,10 +45,12 @@ class Holder(itemView: View) :RecyclerView.ViewHolder(itemView) {
     fun setMemo(memo:Memo) {
         itemView.textNo.text = "${memo.no}"
         itemView.textTitle.text = memo.title
+        itemView.textWriter.text= memo.writer
 
         val sdf = SimpleDateFormat("yyyy/MM/dd")
         val date = sdf.format(memo.timestamp)
         itemView.textDate.text = date
+        itemView.textHits.text = "${memo.no}"
     }
 
 

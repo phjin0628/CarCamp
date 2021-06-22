@@ -22,10 +22,26 @@
         android:text="Title" />
 
     <TextView
-        android:id="@+id/textDate"
+        android:id="@+id/textWriter"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_weight="2"
         android:gravity="center"
+        android:text="글쓴이" />
+
+    <TextView
+        android:id="@+id/textDate"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_weight="3"
+        android:gravity="center"
         android:text="2021-01-01" />
+
+    <TextView
+        android:id="@+id/textHits"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_weight="1"
+        android:gravity="center"
+        android:text="315" />
 </LinearLayout>

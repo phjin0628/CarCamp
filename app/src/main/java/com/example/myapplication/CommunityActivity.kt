@@ -19,10 +19,15 @@ class CommunityActivity : AppCompatActivity() {
         val intent = Intent(this,Community_write::class.java)
         binding.writeBtn.setOnClickListener{ startActivity(intent) }
 
+        //1. 데이터 로딩
         val data = loadData()
+        //2. 어댑터 생성
         val adapter = CustomAdapter()
+        //3. 어댑터에 데이터 전달
         adapter.listData = data
+        //4. 화면에 있는 리사이클러뷰에 아답터 전달
         recycler.adapter = adapter
+        //5. 레이아웃 매니저 연결
         recycler.layoutManager = LinearLayoutManager(this)
     }
 
@@ -32,7 +37,9 @@ class CommunityActivity : AppCompatActivity() {
         for(no in 1..100) {
             val title = "이게 제목이양"
             val date = System.currentTimeMillis()
-            val memo = Memo(no, title, date)
+            val writer = "글쓴이얌"
+            val hits = 10
+            val memo = Memo(no, title, writer, date, hits)
             data.add(memo)
         }
 
